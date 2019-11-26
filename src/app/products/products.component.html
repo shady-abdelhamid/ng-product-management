@@ -14,7 +14,7 @@
        </div> 
     </div>
     <div class="table-responsive">
-        <table class="table">
+        <table *ngIf="products && products.length > 0; else emptyMsg" class="table">
             <thead>
                 <tr>
                     <th>
@@ -50,3 +50,7 @@
           [footer placeholder]
       </div>
   </div>
+
+  <ng-template #emptyMsg>
+      No product found
+  </ng-template>
